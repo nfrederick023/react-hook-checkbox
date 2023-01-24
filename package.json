@@ -1,0 +1,25 @@
+{
+    "name": "react-checkbox-hook",
+    "version": "1.0.0",
+    "description": "Checkbox Hook for React",
+    "homepage": "https://github.com/nfrederick023/react-checkbox-hook",
+    "repository": "github:nfrederick023/react-checkbox-hook",
+    "author": "Noah Frederick <nfrederick023@gmail.com> (https://github.com/nfrederick023)",
+    "license": "MIT",
+    "keywords": [
+        "react",
+        "checkbox",
+        "hook",
+        "select-all",
+        "multi-select",
+        "properties"
+    ],
+    "files": [
+        "index.js"
+    ],
+    "types": "index.d.ts",
+    "dependencies": {
+        "immer": "^9.0.18",
+        "use-immer": "^0.8.1"
+    }
+}
