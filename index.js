@@ -1,5 +1,3 @@
-// react-checkbox-hook
-
 const immer = require("immer");
 const useImmer = require("use-immer");
 
