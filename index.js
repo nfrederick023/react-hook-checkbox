@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 
-const actions = ["Select", "SetProperties", "SetItemName", "SetSelected", "SetSectionName", "SetItems", "SelectAll", "SetSections", "CreateNewUtility"];
+const actions = ["Select", "SetProperties", "SetItemName", "SetSelected", "SetSectionName", "SetItems", "SelectAll", "SetSections", "CreateCheckboxHook", "RemoveItem", "RemoveSection"];
 
 let Action;
 (Action) => {
@@ -36,8 +36,8 @@ export const useCheckbox = (items) => {
             });
         }
 
-        createNewUtility(items) {
-            const type = Action.CreateNewUtility;
+        createCheckboxHook(items) {
+            const type = Action.CreateCheckboxHook;
             setState({
                 type, params: { items }
             });
@@ -330,7 +330,7 @@ export const useCheckbox = (items) => {
                 return new CheckboxHook(action.params.sections);
             }
 
-            case Action.CreateNewUtility: {
+            case Action.CreateCheckboxHook: {
                 const newUtility = intializeUtility(action.params.items);
                 return new CheckboxHook(newUtility.sections);
             }

@@ -1,10 +1,12 @@
-declare class SelectUtility<P> {
+export function useCheckbox<P = Record<string, never>>(items: CheckboxHookBase<P>[]): [CheckboxHook<P>];
+
+declare class CheckboxHook<P> {
     public readonly sections: Section<P>[];
 
     constructor(sections: Section<P>[]);
 
     public setSections(sections: Section<P>[]): void;
-    public createNewUtility(items: SelectUtilityBase<P>[]): void;
+    public createCheckboxHook(items: CheckboxHookBase<P>[]): void;
     public isAnyItemChecked(): boolean;
     public addSection(sectionName: string): void;
     public getSelectedSections(): Section<P>[];
@@ -43,7 +45,7 @@ declare class Item<P> {
     public removeItem(): void;
 }
 
-declare interface SelectUtilityBase<P> {
+declare interface CheckboxHookBase<P> {
     itemName: string;
     sectionName?: string;
     isSelected?: boolean;
@@ -65,7 +67,7 @@ declare enum Action {
     SetItems = 5,
     SelectAll = 6,
     SetSections = 7,
-    CreateNewUtility = 8,
+    CreateCheckboxHook = 8,
     RemoveItem = 9,
     RemoveSection = 10
 
@@ -103,8 +105,8 @@ declare interface SetSections<P> {
     sections: Section<P>[];
 }
 
-declare interface CreateNewUtility<P> {
-    items: SelectUtilityBase<P>[];
+declare interface CreateCheckboxHook<P> {
+    items: CheckboxHookBase<P>[];
 }
 
 declare interface ActionType<T extends Action, P> {
@@ -120,7 +122,7 @@ declare interface ActionType<T extends Action, P> {
     T extends Action.SelectAll ? SetSectionBase :
     T extends Action.SetSections ? SetSections<P> :
     T extends Action.RemoveSection ? SetSectionBase :
-    T extends Action.CreateNewUtility ? CreateNewUtility<P> : never;
+    T extends Action.CreateCheckboxHook ? CreateCheckboxHook<P> : never;
 }
 
 declare type ActionStfy<T extends Action, P> = Record<keyof ActionType<T, P>, ActionType<T, P>[keyof ActionType<T, P>]>;
