@@ -1,13 +1,11 @@
 import { useReducer } from 'react';
 
-const actions = ["Select", "SetProperties", "SetItemName", "SetSelected", "SetSectionName", "SetItems", "SelectAll", "SetSections", "CreateCheckboxHook", "RemoveItem", "RemoveSection"];
+const actions = ['Select', 'SetProperties', 'SetItemName', 'SetSelected', 'SetSectionName', 'SetItems', 'SelectAll', 'SetSections', 'CreateCheckboxHook', 'RemoveItem', 'RemoveSection'];
 
-let Action;
-(Action) => {
-    actions.forEach((action, index) => {
-        Action[action] = index;
-    })
-};
+const Action = {};
+actions.forEach((action, index) => {
+    Action[action] = index;
+});
 
 const genID = () => {
     const str = (Math.random() * 10000).toString();
@@ -93,7 +91,7 @@ export const useCheckbox = (items) => {
         }
 
         removeSection() {
-            const type = Action.SetSections;
+            const type = Action.RemoveSection;
             setState({
                 type, params: { sectionID: this.id }
             });
@@ -117,7 +115,9 @@ export const useCheckbox = (items) => {
         }
 
         isAllSelected() {
-            return !this.items.filter(item => !item.isSelected).length;
+            if (this.items.length)
+                return !this.items.filter(item => !item.isSelected).length;
+            return false;
         }
 
         isAnySelected() {
