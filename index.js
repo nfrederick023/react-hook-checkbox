@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 
-const actions = ['Select', 'SetProperties', 'SetItemName', 'SetSelected', 'SetSectionName', 'SetItems', 'SelectAll', 'SetSections', 'CreateCheckboxHook', 'RemoveItem', 'RemoveSection'];
+const actions = ['Select', 'SetItemProperties', 'SetItemName', 'SetSelected', 'SetSectionName', 'SetItems', 'SelectAll', 'SetSections', 'CreateCheckboxHook', 'RemoveItem', 'RemoveSection', 'SetSectionProperties'];
 
 const Action = {};
 actions.forEach((action, index) => {
@@ -41,9 +41,9 @@ export const useCheckbox = (items) => {
             });
         }
 
-        addSection(sectionName) {
+        addSection(section) {
             const type = Action.SetSections;
-            const sections = [...this.sections, new Section(sectionName, [], genID())];
+            const sections = [...this.sections, new Section(section.name, section.items, genID(), section.properties)];
             setState({
                 type, params: { sections }
             });
@@ -62,38 +62,36 @@ export const useCheckbox = (items) => {
         name;
         items;
         id;
+        properties;
 
-        constructor(name, items, id) {
+        constructor(name, items, id, properties) {
             this.name = name;
             this.items = items;
             this.id = id;
+            this.properties = properties;
         }
 
         setSectionName(name) {
-            const type = Action.SetSectionName;
             setState({
-                type, params: { name, sectionID: this.id }
+                type: Action.SetSectionName, params: { name, sectionID: this.id }
             });
         }
 
         setItems(items) {
-            const type = Action.SetItems;
             setState({
-                type, params: { items, sectionID: this.id }
+                type: Action.SetItems, params: { items, sectionID: this.id }
             });
         }
 
         selectAll() {
-            const type = Action.SelectAll;
             setState({
-                type, params: { sectionID: this.id }
+                type: Action.SelectAll, params: { sectionID: this.id }
             });
         }
 
         removeSection() {
-            const type = Action.RemoveSection;
             setState({
-                type, params: { sectionID: this.id }
+                type: Action.RemoveSection, params: { sectionID: this.id }
             });
         }
 
@@ -104,6 +102,12 @@ export const useCheckbox = (items) => {
             const type = Action.SetItems;
             setState({
                 type, params: { items, sectionID: this.id }
+            });
+        }
+
+        setProperties(properties) {
+            setState({
+                type: Action.SetSectionProperties, params: { properties, sectionID: this.id }
             });
         }
 
@@ -143,37 +147,32 @@ export const useCheckbox = (items) => {
         }
 
         select() {
-            const type = Action.Select;
             setState({
-                type, params: { itemID: this.id }
+                type: Action.Select, params: { itemID: this.id }
             });
         }
 
         setProperties(properties) {
-            const type = Action.SetProperties;
             setState({
-                type, params: { properties, itemID: this.id }
+                type: Action.SetItemProperties, params: { properties, itemID: this.id }
             });
         }
 
         setItemName(name) {
-            const type = Action.SetItemName;
             setState({
-                type, params: { name, itemID: this.id }
+                type: Action.SetItemName, params: { name, itemID: this.id }
             });
         }
 
         setSelected(isSelected) {
-            const type = Action.SetSelected;
             setState({
-                type, params: { isSelected, itemID: this.id }
+                type: Action.SetSelected, params: { isSelected, itemID: this.id }
             });
         }
 
         removeItem() {
-            const type = Action.RemoveItem;
             setState({
-                type, params: { itemID: this.id }
+                type: Action.RemoveItem, params: { itemID: this.id }
             });
         }
     }
@@ -226,7 +225,7 @@ export const useCheckbox = (items) => {
                 break;
             }
 
-            case Action.SetProperties: {
+            case Action.SetItemProperties: {
                 const item = getItem(action.params.itemID);
                 if (!item)
                     break;
@@ -268,7 +267,7 @@ export const useCheckbox = (items) => {
                     break;
 
                 const newItems = section.items.filter(item => item.id !== action.params.itemID);
-                const updatedHook = updateSection(new Section(section.name, newItems, section.id));
+                const updatedHook = updateSection(new Section(section.name, newItems, section.id, section.properties));
                 if (updatedHook)
                     return updatedHook;
 
@@ -280,7 +279,7 @@ export const useCheckbox = (items) => {
                 if (!section)
                     break;
 
-                const updatedHook = updateSection(new Section(action.params.name, section.items, section.id));
+                const updatedHook = updateSection(new Section(action.params.name, section.items, section.id, section.properties));
                 if (updatedHook)
                     return updatedHook;
 
@@ -292,7 +291,19 @@ export const useCheckbox = (items) => {
                 if (!section)
                     break;
 
-                const updatedHook = updateSection(new Section(section.name, action.params.items, section.id));
+                const updatedHook = updateSection(new Section(section.name, action.params.items, section.id, section.properties));
+                if (updatedHook)
+                    return updatedHook;
+
+                break;
+            }
+
+            case Action.SetSectionProperties: {
+                const section = getSection(action.params.sectionID);
+                if (!section)
+                    break;
+
+                const updatedHook = updateSection(new Section(section.name, section.items, section.id, action.params.properties));
                 if (updatedHook)
                     return updatedHook;
 
@@ -314,7 +325,7 @@ export const useCheckbox = (items) => {
                     return new Item(item.name, selectAllState, item.properties, item.id);
                 });
 
-                const updatedHook = updateSection(new Section(section.name, newItems, section.id));
+                const updatedHook = updateSection(new Section(section.name, newItems, section.id, section.properties));
                 if (updatedHook)
                     return updatedHook;
 
@@ -344,7 +355,8 @@ export const useCheckbox = (items) => {
         items.forEach((newItem) => {
 
             newItem.isSelected ??= false;
-            newItem.properties ??= {};
+            newItem.itemProperties ??= {};
+            newItem.sectionProperties ??= {};
             newItem.sectionName ??= 'unnamed_section';
             const itemID = genID();
 
@@ -356,7 +368,7 @@ export const useCheckbox = (items) => {
 
             if (!sectionInNewState) {
                 const sectionID = genID();
-                sections.push(new Section(newItem.sectionName, [new Item(newItem.itemName, newItem.isSelected, newItem.properties, itemID)], sectionID));
+                sections.push(new Section(newItem.sectionName, [new Item(newItem.itemName, newItem.isSelected, newItem.itemProperties, itemID)], sectionID, newItem.sectionProperties));
                 return;
             }
 
@@ -366,7 +378,7 @@ export const useCheckbox = (items) => {
             }
 
             if (!itemInOldState) {
-                sectionInNewState.items.push(new Item(newItem.itemName, newItem.isSelected, newItem.properties, itemID));
+                sectionInNewState.items.push(new Item(newItem.itemName, newItem.isSelected, newItem.itemProperties, itemID));
                 return;
             }
 
