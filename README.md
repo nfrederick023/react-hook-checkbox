@@ -1,6 +1,6 @@
 # React Hook Checkbox
 
-[Get Started](#quickstart) | 
+[Quickstart](#quickstart) | 
 [Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [API](#api) | 
 [Examples](#examples) | 
