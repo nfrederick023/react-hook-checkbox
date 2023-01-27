@@ -1,27 +1,31 @@
 # React Hook Checkbox
 
+An easy to use, all-in-one, minimal setup, React hook for checkboxes
+
+[![npm](https://img.shields.io/npm/dt/react-hook-checkbox.svg)](https://www.npmjs.com/package/react-hook-checkbox)
+[![npm](https://img.shields.io/npm/l/react-hook-checkbox)](https://github.com/nfrederick023/react-hook-checkbox/blob/main/LICENSE)
+[![bundlephobia](https://img.shields.io/bundlephobia/min/react-hook-checkbox)](https://bundlephobia.com/package/react-hook-checkbox@latest)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![JavaScript Style Guide](https://img.shields.io/scrutinizer/quality/g/nfrederick023/react-hook-checkbox/main)](https://standardjs.com)
+
+
+
 ### Features
 
 - [TypeScript Support](./index.d.ts ).
-- [Small size (<2kb minifed)](https://bundlephobia.com/package/react-hook-checkbox@latest) and [Zero Dependencies](./package.json).
+- [Small Size (<2kb minifed)](https://bundlephobia.com/package/react-hook-checkbox@latest) and [Zero Dependencies](./package.json).
 - Select All, Indeterminate, Custom Properties, and Checkbox Nesting.
-- Built-in API for State Maniputlation
+- Built-in API for State Manipulation
 - Minimal Configuration. 
-
-[![](https://img.shields.io/npm/dt/react-hook-checkbox.svg)](https://www.npmjs.com/package/react-hook-checkbox)
-[![](https://img.shields.io/librariesio/dependents/npm/react-hook-checkbox)](https://libraries.io/npm/react-hook-checkbox)
-[![](https://img.shields.io/npm/l/react-hook-checkbox)](https://github.com/nfrederick023/react-hook-checkbox/blob/main/LICENSE)
-[![](https://img.shields.io/bundlephobia/min/react-hook-checkbox)](https://bundlephobia.com/package/react-hook-checkbox@latest)
-
 
 
 ## Table of Contents
 
 [Quickstart](#quickstart) | 
 [Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
+[Usage](#api) |
 [API](#api) | 
 [Examples](#examples) | 
-[TypeScript](#typescript) | 
 [Contributors](#contributors) | 
 [FAQ](#faq) 
 
@@ -73,6 +77,5 @@ export default MyPage;
 ```
 ### API
 ### Examples
-### TypeScript
 ### Contributors
 ### FAQ
