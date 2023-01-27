@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-hook-checkbox/static/css/main.1f99a861.css",
-    "main.js": "/react-hook-checkbox/static/js/main.36d6810c.js",
+    "main.js": "/react-hook-checkbox/static/js/main.0caabca9.js",
     "static/js/787.759e47f1.chunk.js": "/react-hook-checkbox/static/js/787.759e47f1.chunk.js",
     "index.html": "/react-hook-checkbox/index.html",
     "main.1f99a861.css.map": "/react-hook-checkbox/static/css/main.1f99a861.css.map",
-    "main.36d6810c.js.map": "/react-hook-checkbox/static/js/main.36d6810c.js.map",
+    "main.0caabca9.js.map": "/react-hook-checkbox/static/js/main.0caabca9.js.map",
     "787.759e47f1.chunk.js.map": "/react-hook-checkbox/static/js/787.759e47f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f99a861.css",
-    "static/js/main.36d6810c.js"
+    "static/js/main.0caabca9.js"
   ]
 }
