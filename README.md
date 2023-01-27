@@ -1,5 +1,22 @@
 # React Hook Checkbox
 
+### Features
+
+- [TypeScript Support](./index.d.ts ).
+- [Small size (<2kb minifed)](https://bundlephobia.com/package/react-hook-checkbox@latest) and [Zero Dependencies](./package.json).
+- Select All, Indeterminate, Custom Properties, and Checkbox Nesting.
+- Built-in API for State Maniputlation
+- Minimal Configuration. 
+
+[![](https://img.shields.io/npm/dt/react-hook-checkbox.svg)](https://www.npmjs.com/package/react-hook-checkbox)
+[![](https://img.shields.io/librariesio/dependents/npm/react-hook-checkbox)](https://libraries.io/npm/react-hook-checkbox)
+[![](https://img.shields.io/npm/l/react-hook-checkbox)](https://github.com/nfrederick023/react-hook-checkbox/blob/main/LICENSE)
+[![](https://img.shields.io/bundlephobia/min/react-hook-checkbox)](https://bundlephobia.com/package/react-hook-checkbox@latest)
+
+
+
+## Table of Contents
+
 [Quickstart](#quickstart) | 
 [Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [API](#api) | 
@@ -7,13 +24,6 @@
 [TypeScript](#typescript) | 
 [Contributors](#contributors) | 
 [FAQ](#faq) 
-
-### Features
-
-- [TypeScript Support](./package.json).
-- [Small size <2kb](https://bundlephobia.com/package/react-hook-checkbox@latest) and [Zero Dependencies](./index.d.ts)
-- Complete API for: Select All, Indeterminate, Custom Properties, and Checkbox Nesting.
-- All-in-one Minimal Configuration. 
 
 ### Install
 
