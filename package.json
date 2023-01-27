@@ -18,5 +18,17 @@
         "index.js",
         "index.d.ts"
     ],
-    "types": "index.d.ts"
+    "scripts": {
+        "start": "react-scripts start"
+    },
+    "types": "index.d.ts",
+    "dependencies": {},
+    "peerDependencies": {
+        "react": "^18.2.0"
+    },
+    "devDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1"
+    }
 }
