@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "test": "standard"
+    "test": "jest"
   },
   "types": "index.d.ts",
   "peerDependencies": {
@@ -46,5 +46,15 @@
     "standard": "^17.0.0",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "./example"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ]
   }
 }
