@@ -1,4 +1,4 @@
-name: Workflow for Codecov example-typescript
+name: Codecov Tests
 on: [push, pull_request]
 jobs:
   run:
@@ -16,3 +16,5 @@ jobs:
         run: npm run test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/cobertura-coverage.xml
