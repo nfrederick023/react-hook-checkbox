@@ -81,7 +81,7 @@ export const useCheckbox = (config) => {
             getSelectedOptions, isIndeterminate, isAllSelected, isAnySelected, setIsSelected,
             setProperties, removeOption, setCheckbox, setOptions, addOption, setName, select,
             isSelected: config.isSelected ?? false,
-            properties: config.properties ?? {},
+            properties: config.properties,
             name: config.name,
             options: [],
             ref

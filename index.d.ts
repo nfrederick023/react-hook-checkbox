@@ -21,7 +21,7 @@ export interface Checkbox<T> {
 }
 
 export interface CheckboxConfig<T> {
-    name: string;
+    name?: string;
     isSelected?: boolean;
     properties?: T;
     options?: CheckboxConfig<T>[];
