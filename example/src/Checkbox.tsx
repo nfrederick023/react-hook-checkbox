@@ -7,7 +7,6 @@ export interface CheckboxProps {
 }
 
 export const CheckboxItem = (props: CheckboxProps): React.ReactElement<CheckboxProps> => {
-    console.log(props)
     return (
         <label>
             <input
