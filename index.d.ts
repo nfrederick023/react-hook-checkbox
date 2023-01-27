@@ -1,4 +1,4 @@
-export declare function useCheckbox<T>(checkBoxConfig: CheckboxConfig<T> | Record<string, never>): [Checkbox<T>];
+export declare function useCheckbox<T = Record<string, never>>(checkBoxConfig: CheckboxConfig<T>): [Checkbox<T>];
 
 export interface Checkbox<T> {
     readonly options: Checkbox<T>[];
