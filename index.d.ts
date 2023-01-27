@@ -1,6 +1,8 @@
-export declare function useCheckbox<T = Record<string, never>>(checkBoxConfig: CheckboxConfig<T>): [Checkbox<T>];
+import { Dispatch, SetStateAction } from "react";
 
-export interface Checkbox<T> {
+export declare function useCheckbox<T = undefined>(checkBoxConfig: CheckboxConfig<T>): [Checkbox<T>, Dispatch<SetStateAction<Checkbox<T>>>];
+
+export interface Checkbox<T = undefined> {
     readonly options: Checkbox<T>[];
     readonly isSelected: boolean;
     readonly properties: T;
@@ -20,7 +22,7 @@ export interface Checkbox<T> {
     select(): void;
 }
 
-export interface CheckboxConfig<T> {
+export interface CheckboxConfig<T = undefined> {
     name?: string;
     isSelected?: boolean;
     properties?: T;
