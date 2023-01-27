@@ -1,9 +1,7 @@
 # React Hook Checkbox
 
-### Table of Contents
-
 [Get Started](#quickstart) | 
-[Demo](#demo) | 
+[Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [API](#api) | 
 [Examples](#examples) | 
 [TypeScript](#typescript) | 
@@ -25,54 +23,44 @@
 
 ```jsx
 import * as React from 'react';
+
 import { useCheckbox } from 'react-hook-checkbox';
 
 const config = {
-    options: [{
-        name: 'Box Option',
-    }, {
-        name: 'Box Option',
-    }, {
-        name: 'Box Option',
-    }]
+  name: 'List',
+  options: [{
+    name: 'Option 1',
+  }, {
+    name: 'Option 2',
+  }, {
+    name: 'Option 3',
+  }]
 };
 
 const MyPage = () => {
 
-    const [checkbox] = useCheckbox(config);
+  const [list] = useCheckbox(config);
 
-    return (
-        <>
-            <label>
-                <input
-                    type="checkbox"
-                    checked={checkbox.isSelected}
-                    onChange={() => checkbox.select()}
-                />
-                Select All
-            </label>
-            {checkbox.options.map((option, index) => {
-                return (
-                    <div key={index}>
-                        <label style={{ marginLeft: '15px' }}>
-                            <input
-                                type="checkbox"
-                                checked={option.isSelected}
-                                onChange={() => option.select()}
-                            />
-                            {option.name}
-                        </label>
-                        <br />
-                    </div>
-                );
-            })}
-        </>
-    );
+  return (
+    <>
+      {list.options.map((option, index) => {
+        return (
+          <label key={index} style={{ marginLeft: '15px' }}>
+            <input
+              type="checkbox"
+              checked={option.isSelected}
+              onChange={() => option.select()}
+            />
+            {option.name}
+          </label>
+        );
+      })}
+    </>
+  );
 };
 
 export default MyPage;
 ```
-### Demo
 ### API
 ### Examples
 ### TypeScript
