@@ -145,7 +145,7 @@ Returns a `boolean`.
 Removes the checkbox, and all of it's nested checkboxes, from the hook. 
 
 ### `.select()`
-Selects the checkbox. Flipping `.isSeleted` to the opposite of it's current value. 
+Selects the checkbox. Flipping `.isSelected` to the opposite of it's current value. 
 
 # Usage
 Work in progress.
