@@ -97,7 +97,7 @@ All checkboxes (`myList`, and all it's options) share the same properties/functi
 - `.isSelected` - `true` or `false` if the checkbox selected. 
 - `.ref` - refrence to the parent checkbox. `undefined` if there's no parent.
 
-Note: Follow [React's rule's of Hooks](https://reactjs.org/docs/hooks-rules.html), when working with `.properties`.
+Note: Follow [React's rule's of Hooks](https://reactjs.org/docs/hooks-rules.html) when working with `.properties`.
 
 ## Functions:
 
