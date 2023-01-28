@@ -89,7 +89,7 @@ Creates all the checkboxes from the provided `checkboxConfig`. Returns the hook.
 
 All checkboxes (`myList`, and all it's options) share the same properties/functions as described below:
 
-## Properties:
+### Properties:
 
 - `.name` - name of the checkbox
 - `.options` - arrary of any nested checkboxes. `[]` if there's no nested checkboxes.
@@ -99,7 +99,7 @@ All checkboxes (`myList`, and all it's options) share the same properties/functi
 
 Note: Follow [React's rule's of Hooks](https://reactjs.org/docs/hooks-rules.html) when working with `.properties`.
 
-## Functions:
+### Functions:
 
 ### `.setCheckbox(config)`
 Accepts a `checkboxConfig`. Returns void.  
