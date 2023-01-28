@@ -11,7 +11,7 @@ export interface Checkbox<T = undefined> {
     setOptions(options: CheckboxConfig<T>[]): void;
     setCheckbox(config: CheckboxConfig<T>): void;
     addOption(option: CheckboxConfig<T>): void;
-    setIsSelected(selected: boolean): void;
+    setIsSelected(isSelected: boolean): void;
     setProperties(properties: T): void;
     setName(name: string): void;
     getSelectedOptions(): Checkbox<T>[];
