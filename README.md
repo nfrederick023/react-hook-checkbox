@@ -17,7 +17,6 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 - Built-in API for State Manipulation
 - Minimal Configuration and Integration necassary. 
 
-
 ## Table of Contents
 
 [Quickstart](#quickstart) | 
@@ -164,11 +163,4 @@ Yes! If you'd like to contribute to the project, [please make a pull request](ht
 
 ## Q: How can I say thanks?
 
-I don't have a Pateron or anything. Feel free to send me an email: nfrederick023@gmail.com  
-
-## Q: Who is using `react-hook-checkbox`?
-
-[...]
-
-Using react-hook-checkbox in your project and want your app here? [Raise a PR](https://github.com/nfrederick023/react-hook-checkbox/pulls)!
-
+Feel free to send me an email: nfrederick023@gmail.com  
