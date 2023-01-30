@@ -171,5 +171,5 @@ I don't have a Pateron or anything. Feel free to send me an email: nfrederick023
 
 [...]
 
-Using `react-hook-checkbox` in your project and want your app here? [Raise a PR](https://github.com/nfrederick023/react-hook-checkbox/pulls)!
+Using react-hook-checkbox in your project and want your app here? [Raise a PR](https://github.com/nfrederick023/react-hook-checkbox/pulls)!
 
