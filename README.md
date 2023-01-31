@@ -25,7 +25,6 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 [Usage](#api) |
 [API](#api) | 
 [Examples](#examples) | 
-[Contributors](#contributors) | 
 [FAQ](#faq) 
 
 ### Install
