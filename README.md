@@ -11,7 +11,7 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 
 ### Features
 
-- [TypeScript Support](./index.d.ts ).
+- [TypeScript Support](./index.d.ts ) complete with JSDocs.
 - [Small Size (<2kb minifed)](https://bundlephobia.com/package/react-hook-checkbox@latest) and [Zero Dependencies](./package.json).
 - Select All, Indeterminate, Custom Properties, and Checkbox Nesting.
 - Built-in API for State Manipulation
@@ -50,11 +50,11 @@ const config = {
 
 const MyPage = () => {
 
-  const [list] = useCheckbox(config);
+  const [myCheckbox] = useCheckbox(config);
 
   return (
     <>
-      {list.options.map((option, index) => {
+      {myCheckbox.options.map((option, index) => {
         return (
           <label key={index} style={{ marginLeft: "15px" }}>
             <input
@@ -75,26 +75,26 @@ export default MyPage;
 # API
 
 ### `const checkboxConfig = {...}`
-Checkboxes are built with a user-provided configuration object hereinafter referred to as  `checkboxConfig`. The `checkboxConfig` accepts the following parameters: 
+Checkboxes are built with a user-provided configuration object hereinafter referred to as `checkboxConfig`. The `checkboxConfig` accepts the following parameters: 
 
-- `name` - name of the checkbox. Accepts a `string`. Defaults to `""`.
-- `options` - any nested checkboxes. Accepts a `checkboxConfig[]`. Defaults to `[]`
-- `properties` - properites the user provides. Accepts an `any`. Defaults to `undefined`.
-- `isSelected` - if checkbox is selected. Accepts a `boolean`. Defaults to `false`,
+- `name` - the name of the checkbox. Defaults to `""`.
+- `options` - any child checkboxes. Defaults to `[]`.
+- `properties` - properties provided to the checkbox. Defaults to `undefined`,
+- `isSelected` - true/false if the checkbox is selected. Defaults to `false`.
 
 \* all of these paramers are optional
 
 ### `const [myList, setMyList] = useCheckbox(checkboxConfig)`
-Creates all the checkboxes from the provided `checkboxConfig`. Returns the hook. 
+Creates the checkboxes from the provided `checkboxConfig`. Returns a React hook. 
 
-All checkboxes (`myList`, and all it's options) share the same properties/functions as described below:
+All checkboxes (`myList` and its options) share the same properties/functions as described below:
 
 ### Properties:
 
 - `.name` - name of the checkbox
-- `.options` - arrary of any nested checkboxes. `[]` if there's no nested checkboxes.
-- `.properties` - any custom properties provided by the user. 
-- `.isSelected` - `true` or `false` if the checkbox selected. 
+- `.options` - arrary of any child checkboxes. `[]` if there are none.
+- `.properties` - properties provided to the checkbox.
+- `.isSelected` - `true`/`false` if checkbox is selected.
 - `.ref` - refrence to the parent checkbox. `undefined` if there's no parent.
 
 Note: Remember to follow [React's rule's of Hooks](https://reactjs.org/docs/hooks-rules.html) when working with `.properties`.
@@ -102,57 +102,53 @@ Note: Remember to follow [React's rule's of Hooks](https://reactjs.org/docs/hook
 ### Functions:
 
 ### `.setCheckbox(config)`
-Accepts a `checkboxConfig`. Returns void.  
-Replaces the checkbox with a new checkbox generated from `checkboxConfig`. 
+Resets and creates a new checkbox on from the provided configuration.
+Accepts a `checkboxConfig`.
 
 ### `.setOptions(options)`
+Resets the `.options` to a new set of options from the provided configuration.   
 Accepts a `checkboxConfig[]`.  
-Sets the checkbox's `.options` to a checkbox array created from the `checkboxConfig[]`.    
 
 ### `.addOption(option)`
+Adds a child checkbox to `.options` from the provided configuration.
 Accepts a `checkboxConfig`.   
-Creates a new checkbox from the `checkboxConfig` and pushes it to `.options`.
 
 ### `.setIsSelected(isSelected)`
+Sets the `.isSelected` of the checkbox. 
 Accepts a `boolean`.  
-Sets the checkbox's `.isSelected` to the `isSelected`.
 
 ### `.setProperties(properties)`
+Sets the `.properties` of the checkbox. 
 Accepts an `any`.  
-Sets the checkbox's `.properties` to the `properties`.  
 
 ### `.setName(name)`
+Sets the `.name` of the checkbox. 
 Accepts a `string`.   
-Sets the checkbox's `.properties` to the `properties`.
 
 ### `.getSelectedOptions()`
-Returns an array of checkboxes.   
-Array contains all of the selected checkboxes in `.options`.
+Gets an array of all child checkboxes in which `.isSelected` is `true`.
 
 ### `.isIndeterminate()`
-Returns a `boolean`.  
-`true` if the checkbox is indeterminate. 
+Returns `true`/`false` if the checkbox is indeterminate.
 
 ### `.isAllSelected()`
-Returns a `boolean`.  
-`true` if all of the checkboxes in `.options` are selected.
+Returns `true`/false if `.isSelected` of all child checkboxes is true.
 
 ### `.isAnySelected(): boolean;`
-Returns a `boolean`.  
-`true` if any of the checkboxes in `.options` are selected.
+Returns `true`/`false` if `.isSelected` of any child checkbox is true. 
 
 ### `.removeOption()`
-Removes the checkbox, and all of it's nested checkboxes, from the hook. 
+Removes a checkbox from the parent checkbox's `.options`.
 
 ### `.select()`
-Selects the checkbox. Flipping `.isSelected` to the opposite of it's current value. 
+Selects a single checkbox, inverting the current `.isSelected`.
 
 # Usage
 
 Setting the initial state:
 
 ```jsx
-const config: CheckboxConfig<{}> = {
+const config = {
   name: 'List',
   isSelected: false,
   properties: { myProperties: "hello world!"},
@@ -173,31 +169,30 @@ const config: CheckboxConfig<{}> = {
 
 const MyPage = () => {
 
-  const [list] = useCheckbox(config);
+  const [myCheckbox] = useCheckbox(config);
 
   return (
     <>
       <p>Will say "FizzBuzz":</p>
-      {list.options[2].properties.myProperties}
+      {myCheckbox.options[2].properties.myProperties}
     </>
   );
 };
 ```
 Utilizing default values:
 ```jsx
-const config = {};
-
 const MyPage = () => {
 
-  const [list] = useCheckbox(config);
+  // since all paramters are options `{}` is valid use of `useCheckbox()`
+  const [myCheckbox] = useCheckbox({});
 
   return (
     <>
       <p> name is "" by default </p>
-      {list.name}
+      {myCheckbox.name}
 
       <p> isSelected is false by default </p>
-      {list.isSelected ? "true" : "false"}
+      {myCheckbox.isSelected ? "true" : "false"}
     </>
   );
 };
@@ -206,7 +201,7 @@ Setting name, options, properties and adding/removing options:
 ```jsx
 const MyPage = () => {
 
-  const [list] = useCheckbox(config);
+  const [myCheckbox] = useCheckbox(config);
 
   const option = {
     name: "new option"
@@ -221,15 +216,15 @@ const MyPage = () => {
   const newProperties = { myProperties: "new property" };
 
   // display new list in console on rerender
-  console.log(list);
+  console.log(myCheckbox);
 
   return (
     <>
-      <button onClick={() => list.setName("new name")}>Set Name</button>
-      <button onClick={() => list.setProperties(newProperties)}>Set Properties</button>
-      <button onClick={() => list.addOption(option)}>Add Option</button>
-      <button onClick={() => list.setOptions(options)}>Set Option</button>
-      <button onClick={() => list.options[0].removeOption()}>Remove First Option</button>
+      <button onClick={() => myCheckbox.setName("new name")}>Set Name</button>
+      <button onClick={() => myCheckbox.setProperties(newProperties)}>Set Properties</button>
+      <button onClick={() => myCheckbox.addOption(option)}>Add Option</button>
+      <button onClick={() => myCheckbox.setOptions(options)}>Set Option</button>
+      <button onClick={() => myCheckbox.options[0].removeOption()}>Remove First Option</button>
     </>
   );
 };
@@ -238,11 +233,11 @@ Displaying a single set of checkboxes
 ```jsx
 const MyPage = () => {
 
-  const [list] = useCheckbox(config);
+  const [myCheckbox] = useCheckbox(config);
 
   return (
     <>
-      {list.options.map((option, index) => {
+      {myCheckbox.options.map((option, index) => {
         return (
           <label key={index} style={{ marginLeft: "15px" }}>
             <input
@@ -263,7 +258,7 @@ Display all checkboxes recursively:
 ```jsx
 const MyPage = () => {
 
-  const [list] = useCheckbox(config);
+  const [myCheckbox] = useCheckbox(config);
 
   const displayCheckboxex = (checkbox) => {
     return (
@@ -282,7 +277,7 @@ const MyPage = () => {
         {checkbox.options.map((option, index) => {
           return (
             <div key={index} style={{ marginLeft: "15px" }}>
-              {list.options.length ?
+              {myCheckbox.options.length ?
                 displayCheckboxex(option)
                 :
                 <></>
@@ -296,13 +291,11 @@ const MyPage = () => {
 
   return (
     <>
-      {displayCheckboxex(list)}
+      {displayCheckboxex(myCheckbox)}
     </>
   );
 };
 ```
-# TypeScript
-
 Usage with TypeScript
 ```jsx
 type MyType = string;
@@ -313,11 +306,11 @@ const config: CheckboxConfig<MyType> = {
 
 const MyPage = () => {
 
-  const [list] = useCheckbox<MyType>(config);
+  const [myCheckbox] = useCheckbox<MyType>(config);
 
   return (
     <>
-      {list.properties}
+      {myCheckbox.properties}
     </>
   );
 };
@@ -326,13 +319,13 @@ const MyPage = () => {
 
 # FAQ
 
-## Q: I found a bug, have a suggestion, or need help!?
+## Q: I found a bug, have a suggestion/issue, or need help!
 
 Please raise an issue on the [Github repository](https://github.com/nfrederick023/react-hook-checkbox/issues). 
 
 ## Q: Are you looking for contributors? 
 
-Yes! If you'd like to contribute to the project, [please make a pull request](https://github.com/nfrederick023/react-hook-checkbox/pulls). 
+Yes! If you'd like to contribute to the project, [please raise a pull request](https://github.com/nfrederick023/react-hook-checkbox/pulls). 
 
 ## Q: How can I say thanks?
 
