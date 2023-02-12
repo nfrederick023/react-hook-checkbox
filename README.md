@@ -1,6 +1,6 @@
 # React Hook Checkbox
 
-An easy to use, all-in-one, minimal setup, React hook for checkboxes
+An easy to use, all-in-one, minimal setup, React Hook for checkboxes.
 
 [![npm](https://img.shields.io/npm/dt/react-hook-checkbox.svg)](https://www.npmjs.com/package/react-hook-checkbox)
 [![npm](https://img.shields.io/npm/l/react-hook-checkbox)](https://github.com/nfrederick023/react-hook-checkbox/blob/main/LICENSE)
@@ -17,10 +17,11 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 - Built-in API for State Manipulation.
 - Minimal Configuration and Integration necassary. 
 
+[Demo](https://nfrederick023.github.io/react-hook-checkbox/)
+
 ## Table of Contents
 
 [Quickstart](#quickstart) | 
-[Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [Usage](#usage) |
 [API](#api) | 
 [FAQ](#faq) 
