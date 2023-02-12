@@ -1,8 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
 /**
- * React hook for checkboxes. 
- * 
  * Creates the checkboxes from the provided checkboxConfig. Returns a React hook. 
  *
  * @param checkBoxConfig is the configuration for the checkbox
@@ -201,7 +199,7 @@ export interface Checkbox<T = undefined> {
   setName(name: string): void;
 
   /**
-  * Gets an array of all child checkboxes in which `.isSelected` is `true`.
+  * Returns an array of all child checkboxes in which `.isSelected` is `true`.
   * 
   * @returns array of checkboxes
   * 
