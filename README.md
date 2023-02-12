@@ -323,14 +323,14 @@ const MyPage = () => {
 
 # FAQ
 
-## Q: I found a bug, have a suggestion, or need help!?
+### Q: I found a bug, have a suggestion, or need help!?
 
 Please raise an issue on the [Github repository](https://github.com/nfrederick023/react-hook-checkbox/issues). 
 
-## Q: Are you looking for contributors? 
+### Q: Are you looking for contributors? 
 
 Yes! If you'd like to contribute to the project, [please make a pull request](https://github.com/nfrederick023/react-hook-checkbox/pulls). 
 
-## Q: How can I say thanks?
+### Q: How can I say thanks?
 
 Feel free to send me an email: nfrederick023@gmail.com  
