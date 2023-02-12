@@ -1,8 +1,8 @@
 {
   "name": "react-hook-checkbox",
-  "version": "1.0.312",
+  "version": "1.0.313",
   "description": "Checkbox Hook for React",
-  "homepage": ".",
+  "homepage": "https://github.com/nfrederick023/react-hook-checkbox",
   "repository": "github:nfrederick023/react-hook-checkbox",
   "author": "Noah Frederick <nfrederick023@gmail.com> (https://github.com/nfrederick023)",
   "license": "MIT",
