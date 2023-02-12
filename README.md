@@ -22,7 +22,6 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 [Quickstart](#quickstart) | 
 [Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [Usage](#usage) |
-[TypeScript](#typescriot) |
 [API](#api) | 
 [FAQ](#faq) 
 
@@ -301,8 +300,6 @@ const MyPage = () => {
   );
 };
 ```
-# TypeScript
-
 Usage with TypeScript
 ```jsx
 type MyType = string;
