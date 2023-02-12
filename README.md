@@ -295,7 +295,7 @@ const MyPage = () => {
   );
 };
 ```
-Usage with TypeScript
+Usage with TypeScript:
 ```jsx
 type MyType = string;
 
@@ -318,7 +318,7 @@ const MyPage = () => {
 
 # FAQ
 
-## Q: I found a bug, have a suggestion/issue, or need help!
+### Q: I found a bug, have a suggestion/issue, or need help!
 
 Please raise an issue on the [Github repository](https://github.com/nfrederick023/react-hook-checkbox/issues). 
 
