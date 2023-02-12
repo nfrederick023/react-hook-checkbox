@@ -14,7 +14,7 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 - [TypeScript Support](./index.d.ts ) complete with JSDocs.
 - [Small Size (<2kb minifed)](https://bundlephobia.com/package/react-hook-checkbox@latest) and [Zero Dependencies](./package.json).
 - Select All, Indeterminate, Custom Properties, and Checkbox Nesting.
-- Built-in API for State Manipulation
+- Built-in API for State Manipulation.
 - Minimal Configuration and Integration necassary. 
 
 ## Table of Contents
@@ -228,7 +228,7 @@ const MyPage = () => {
   );
 };
 ```
-Displaying a single set of checkboxes 
+Display a single set of checkboxes: 
 ```jsx
 const MyPage = () => {
 
