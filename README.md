@@ -102,31 +102,31 @@ Note: Remember to follow [React's rule's of Hooks](https://reactjs.org/docs/hook
 ### Functions:
 
 ### `.setCheckbox(config)`
-Resets and creates a new checkbox on from the provided configuration.
+Resets and creates a new checkbox on from the provided configuration.  
 Accepts a `checkboxConfig`.
 
 ### `.setOptions(options)`
-Resets the `.options` to a new set of options from the provided configuration.   
+Resets the `.options` to a new set of options from the provided configuration.    
 Accepts a `checkboxConfig[]`.  
 
 ### `.addOption(option)`
-Adds a child checkbox to `.options` from the provided configuration.
+Adds a child checkbox to `.options` from the provided configuration.   
 Accepts a `checkboxConfig`.   
 
 ### `.setIsSelected(isSelected)`
-Sets the `.isSelected` of the checkbox. 
+Sets the `.isSelected` of the checkbox.   
 Accepts a `boolean`.  
 
 ### `.setProperties(properties)`
-Sets the `.properties` of the checkbox. 
+Sets the `.properties` of the checkbox.   
 Accepts an `any`.  
 
 ### `.setName(name)`
-Sets the `.name` of the checkbox. 
+Sets the `.name` of the checkbox.   
 Accepts a `string`.   
 
 ### `.getSelectedOptions()`
-Gets an array of all child checkboxes in which `.isSelected` is `true`.
+Returns an array of all child checkboxes in which `.isSelected` is `true`.
 
 ### `.isIndeterminate()`
 Returns `true`/`false` if the checkbox is indeterminate.
