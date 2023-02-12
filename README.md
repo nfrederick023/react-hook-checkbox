@@ -101,7 +101,7 @@ Note: Remember to follow [React's rule's of Hooks](https://reactjs.org/docs/hook
 ### Functions:
 
 ### `.setCheckbox(config)`
-Accepts a `checkboxConfig`. Returns void.  
+Accepts a `checkboxConfig`.  
 Replaces the checkbox with a new checkbox generated from `checkboxConfig`. 
 
 ### `.setOptions(options)`
