@@ -23,7 +23,6 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 [Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [Usage](#api) |
 [API](#api) | 
-[Examples](#examples) | 
 [FAQ](#faq) 
 
 ### Install
@@ -146,9 +145,6 @@ Removes the checkbox, and all of it's nested checkboxes, from the hook.
 Selects the checkbox. Flipping `.isSelected` to the opposite of it's current value. 
 
 # Usage
-Work in progress.
-
-# Examples
 Work in progress.
 
 # FAQ
