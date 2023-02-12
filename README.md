@@ -22,7 +22,6 @@ An easy to use, all-in-one, minimal setup, React hook for checkboxes
 [Quickstart](#quickstart) | 
 [Demo](https://nfrederick023.github.io/react-hook-checkbox/) |
 [Usage](#usage) |
-[TypeScript](#typescriot) |
 [API](#api) | 
 [FAQ](#faq) 
 
@@ -323,10 +322,10 @@ const MyPage = () => {
 
 Please raise an issue on the [Github repository](https://github.com/nfrederick023/react-hook-checkbox/issues). 
 
-## Q: Are you looking for contributors? 
+### Q: Are you looking for contributors? 
 
 Yes! If you'd like to contribute to the project, [please raise a pull request](https://github.com/nfrederick023/react-hook-checkbox/pulls). 
 
-## Q: How can I say thanks?
+### Q: How can I say thanks?
 
 Feel free to send me an email: nfrederick023@gmail.com  
