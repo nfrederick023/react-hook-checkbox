@@ -22,8 +22,8 @@ An easy to use, all-in-one, minimal setup, React Hook for checkboxes.
 ## Table of Contents
 
 [Quickstart](#quickstart) | 
-[Usage](#usage) |
 [API](#api) | 
+[Usage](#usage) |
 [FAQ](#faq) 
 
 ### Install
@@ -134,7 +134,7 @@ Returns `true`/`false` if the checkbox is indeterminate.
 ### `.isAllSelected()`
 Returns `true`/false if `.isSelected` of all child checkboxes is true.
 
-### `.isAnySelected(): boolean;`
+### `.isAnySelected()`
 Returns `true`/`false` if `.isSelected` of any child checkbox is true. 
 
 ### `.removeOption()`
