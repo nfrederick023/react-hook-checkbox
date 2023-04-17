@@ -1,5 +1,5 @@
+import { act, renderHook } from '@testing-library/react';
 import { CheckboxConfig, useCheckbox } from '.';
-import { act, renderHook } from "@testing-library/react-hooks";
 
 describe('useCheckbox', () => {
 
