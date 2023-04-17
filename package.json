@@ -28,7 +28,7 @@
   },
   "types": "index.d.ts",
   "peerDependencies": {
-    "react": "^16.9.0"
+    "react": "^16 || ^17"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.2",
