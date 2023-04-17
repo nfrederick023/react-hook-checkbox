@@ -1,6 +1,6 @@
 {
   "name": "react-hook-checkbox",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "description": "Checkbox Hook for React",
   "homepage": "https://github.com/nfrederick023/react-hook-checkbox",
   "repository": "github:nfrederick023/react-hook-checkbox",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-typescript": "^7.17.12",
+    "@testing-library/react": "^13.4.0",
     "@types/jest": "^27.5.2",
     "@types/react": "^18.0.18",
     "gh-pages": "^5.0.0",
@@ -53,8 +54,5 @@
       "/example"
     ],
     "testEnvironment": "jsdom"
-  },
-  "dependencies": {
-    "@testing-library/react": "^13.4.0"
   }
 }
